@@ -1,0 +1,45 @@
+{
+    "id": "github-actions-runner",
+    "version": "0.1.0",
+    "name": "GitHub Actions Runner",
+    "description": "A devcontainer that spins up and runs a self hosted GitHub Actions runner inside a Codespace attached to the current repository.",
+    "documentationURL": "https://github.com/Pwd9000-ML/GitHub-Runner-Dev-Container/tree/main/src/github-actions-runner",
+    "licenseURL": "https://github.com/Pwd9000-ML/GitHub-Runner-Dev-Container/blob/main/LICENSE",
+    "options": {
+        "imageVariant": {
+            "type": "string",
+            "description": "Debian version (use bullseye on local arm64/Apple Silicon):",
+            "proposals": [
+                "bullseye",
+                "buster"
+            ],
+            "default": "bullseye"
+        },
+        "runnerVersion": {
+            "type": "string",
+            "description": "Choose version of GitHub Runner to Install",
+            "default": "latest"
+        },
+        "upgradePackages": {
+            "type": "string",
+            "description": "Upgrade all packages",
+            "proposals": [
+                "true",
+                "false"
+            ],
+            "default": "true"
+        },
+        "installZSH": {
+            "type": "string",
+            "description": "Install ZSH",
+            "proposals": [
+                "true",
+                "false"
+            ],
+            "default": "true"
+        }
+    },
+    "platforms": [
+        "Any"
+    ]
+}

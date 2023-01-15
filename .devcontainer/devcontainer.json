@@ -1,0 +1,19 @@
+// More info: https://containers.dev/implementors/json_reference/
+{
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
+	"features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/lukewiwa/features/shellcheck:0": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/sshd:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"mads-hartmann.bash-ide-vscode",
+				"dbaeumer.vscode-eslint"
+			]
+		}
+	},
+	"postCreateCommand": "/bin/bash -ex ./.devcontainer/setup.sh > postCreateCommand.log"
+}
