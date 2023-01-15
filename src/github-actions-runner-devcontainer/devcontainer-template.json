@@ -18,7 +18,7 @@
         "runnerVersion": {
             "type": "string",
             "description": "Choose version of GitHub Runner to Install",
-            "default": "latest"
+            "default": "2.295.0"
         },
         "upgradePackages": {
             "type": "string",
