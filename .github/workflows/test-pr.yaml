@@ -12,7 +12,7 @@ jobs:
         id: filter
         with:
           filters: |
-            github-actions-runner-devcontainer: ./**/github-actions-runner-devcontainer/**
+            github-actions-runner: ./**/github-actions-runner/**
 
   test:
     needs: [detect-changes]
