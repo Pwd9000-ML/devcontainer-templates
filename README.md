@@ -1,7 +1,3 @@
-
-
-
-
 TODO REMOVE
 # Dev Container Templates: Self Authoring Guide
 

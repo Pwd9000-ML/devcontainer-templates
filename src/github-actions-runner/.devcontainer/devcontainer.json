@@ -8,10 +8,10 @@
 		"vscode": {		
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"ms-vscode.azurecli",
-				"ms-vscode.powershell",
-				"hashicorp.terraform",
-				"tfsec.tfsec",
+				//"ms-vscode.azurecli",
+				//"ms-vscode.powershell",
+				//"hashicorp.terraform",
+				//"tfsec.tfsec",
 				"esbenp.prettier-vscode"
 			]
 		}
@@ -33,10 +33,13 @@
 	//	}
 	//},
 	"features": {
-		"terraform": "latest",
-		"azure-cli": "latest",
-		"git-lfs": "latest",
-		"github-cli": "latest",
-		"powershell": "latest"
+		"ghcr.io/devcontainers/features/common-utils:2": {},
+		"ghcr.io/lukewiwa/features/shellcheck:0": {},
+		"ghcr.io/devcontainers/features/sshd:1": {}
+		//"terraform": "latest",
+		//"azure-cli": "latest",
+		//"git-lfs": "latest",
+		//"github-cli": "latest",
+		//"powershell": "latest"
 	}
 }

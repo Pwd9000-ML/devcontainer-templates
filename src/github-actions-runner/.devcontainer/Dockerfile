@@ -35,4 +35,4 @@ RUN chown -R vscode ~vscode
 RUN chmod +x /home/vscode/actions-runner/start.sh
 
 # Clean up
-RUN rm -rf /var/lib/apt/lists/* /tmp/library-scripts
+RUN rm -rf /var/lib/apt/lists/* /tmp/scripts
