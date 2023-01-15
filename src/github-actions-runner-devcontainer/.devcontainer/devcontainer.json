@@ -28,11 +28,11 @@
 	// Amend GitHub runner version with 'RUNNER_VERSION'. https://github.com/actions/runner/releases.
 	"build": {
 		"args": {
-			"UPGRADE_PACKAGES": "true",
-			"RUNNER_VERSION": "2.295.0"
+			"UPGRADE_PACKAGES": "${templateOption:upgradePackages}",
+			"RUNNER_VERSION": "${templateOption:runnerVersion}" //"2.295.0"
 		}
 	},
-	
+
 	"features": {
 		//"ghcr.io/devcontainers/features/common-utils:2": {},
 		//"ghcr.io/lukewiwa/features/shellcheck:0": {},

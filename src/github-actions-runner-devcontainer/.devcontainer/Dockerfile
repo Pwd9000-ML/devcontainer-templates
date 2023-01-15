@@ -4,7 +4,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:${templateOption:imageVariant}
 # [Optional] Install zsh
 ARG INSTALL_ZSH=${templateOption:installZSH}
 # [Optional] Upgrade OS packages to their latest versions
-ARG UPGRADE_PACKAGES=${templateOption:upgradePackages}
+ARG UPGRADE_PACKAGES="false"
 
 # Install needed packages and setup non-root user. Use a separate RUN statement to add your own dependencies.
 ARG USERNAME=vscode
@@ -17,7 +17,7 @@ RUN bash /tmp/scripts/common-debian.sh "${INSTALL_ZSH}" "${USERNAME}" "${USER_UI
 RUN cd /home/vscode && mkdir actions-runner && cd actions-runner
 
 # input GitHub runner version argument
-ARG RUNNER_VERSION=${templateOption:runnerVersion}
+ARG RUNNER_VERSION="2.295.0"
 
 # download, extract and install dependencies for GitHub Actions runner
 RUN cd /home/vscode/actions-runner \
