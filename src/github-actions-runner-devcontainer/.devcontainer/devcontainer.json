@@ -26,22 +26,20 @@
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
 	// Amend GitHub runner version with 'RUNNER_VERSION'. https://github.com/actions/runner/releases.
-	"build": {
-		"args": {
-			"UPGRADE_PACKAGES": "${templateOption:upgradePackages}",
-			"RUNNER_VERSION": "${templateOption:runnerVersion}" //"2.295.0"
-		}
-	},
-
+	//"build": {
+	//	"args": {
+	//		"UPGRADE_PACKAGES": "true",
+	//		"RUNNER_VERSION": "2.295.0"
+	//	}
+	//},
 	"features": {
-		//"ghcr.io/devcontainers/features/common-utils:2": {},
-		//"ghcr.io/lukewiwa/features/shellcheck:0": {},
-		//"ghcr.io/devcontainers/features/sshd:1": {}
+		"ghcr.io/devcontainers/features/common-utils:2": {},
+		"ghcr.io/lukewiwa/features/shellcheck:0": {},
+		"ghcr.io/devcontainers/features/sshd:1": {}
 		//"terraform": "latest",
 		//"azure-cli": "latest",
 		//"git-lfs": "latest",
-		"github-cli": "latest"
+		//"github-cli": "latest",
 		//"powershell": "latest"
 	}
-	
 }
