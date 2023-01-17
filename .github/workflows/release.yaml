@@ -2,7 +2,7 @@ name: "Release Dev Container Templates & Generate Documentation"
 on:
   workflow_dispatch:
 
-#permissions: write-all
+permissions: write-all
 
 jobs:
   deploy:
