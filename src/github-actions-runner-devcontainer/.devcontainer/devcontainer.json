@@ -8,10 +8,10 @@
 		"vscode": {		
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				//"ms-vscode.azurecli",
-				//"ms-vscode.powershell",
-				//"hashicorp.terraform",
-				//"tfsec.tfsec",
+				"ms-vscode.azurecli",
+				"ms-vscode.powershell",
+				"hashicorp.terraform",
+				"tfsec.tfsec",
 				"esbenp.prettier-vscode"
 			]
 		}
@@ -28,19 +28,17 @@
 	// Amend GitHub runner version with 'RUNNER_VERSION'. https://github.com/actions/runner/releases.
 	//"build": {
 	//	"args": {
-	//		"UPGRADE_PACKAGES": "true",
-	//		"RUNNER_VERSION": "2.295.0"
+	//		"X": "y"
 	//	}
 	//},
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {},
 		"ghcr.io/lukewiwa/features/shellcheck:0": {},
 		"ghcr.io/devcontainers/features/sshd:1": {},
-		"ghcr.io/devcontainers/features/terraform:1": {"terraform": false }
-		//"terraform": "latest",
-		//"azure-cli": "latest",
-		//"git-lfs": "latest",
-		//"github-cli": "latest",
-		//"powershell": "latest"
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers/features/terraform:1": {"terraform": false },
+		"ghcr.io/devcontainers/features/git-lfs:1": {"git-lfs": false},
+		"ghcr.io/devcontainers/features/azure-cli:1": {"azure-cli": false},
+		"ghcr.io/devcontainers/features/powershell:1": {"powershell": false}
 	}
 }

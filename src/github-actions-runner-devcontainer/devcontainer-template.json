@@ -26,7 +26,22 @@
         "terraform": {
             "type": "boolean",
             "default": true,
-            "description": "Installs terraform"
+            "description": "Install terraform?"
+        },
+        "git-lfs": {
+            "type": "boolean",
+            "default": true,
+            "description": "Install git-lfs?"
+        },
+        "azure-cli": {
+            "type": "boolean",
+            "default": true,
+            "description": "Install Azure CLI?"
+        },
+        "powershell": {
+            "type": "boolean",
+            "default": true,
+            "description": "Install PowerShell?"
         }
     },
     "platforms": [
