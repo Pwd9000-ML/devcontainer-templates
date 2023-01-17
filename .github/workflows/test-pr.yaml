@@ -1,4 +1,4 @@
-name: "CI - Test Templates"
+name: "Test Templates"
 on:
   pull_request:
   workflow_dispatch:
