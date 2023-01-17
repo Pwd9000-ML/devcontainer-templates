@@ -12,7 +12,7 @@ jobs:
       - name: "Publish Templates"
         uses: devcontainers/action@v1
         with:
-          publish-templates: "true"
+          publish-templates: "false"
           base-path-to-templates: "./src"
           generate-docs: "true"
 
