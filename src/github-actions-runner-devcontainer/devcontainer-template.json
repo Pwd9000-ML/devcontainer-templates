@@ -18,26 +18,34 @@
         "runnerVersion": {
             "type": "string",
             "description": "Choose version of GitHub Runner to Install",
-            "default": "2.295.0"
-        },
-        "upgradePackages": {
-            "type": "string",
-            "description": "Upgrade all packages",
             "proposals": [
-                "true",
-                "false"
+                "2.298.2", "2.299.1", "2.300.0", "2.300.1", "2.300.2", "2.300.2"
             ],
-            "default": "true"
+            "default": "2.300.2"
         },
-        "installZSH": {
-            "type": "string",
-            "description": "Install ZSH",
-            "proposals": [
-                "true",
-                "false"
-            ],
-            "default": "true"
+        "terraform": {
+            "type": "boolean",
+            "default": true,
+            "description": "Installs terraform"
         }
+        //"upgradePackages": {
+        //   "type": "string",
+        //  "description": "Upgrade all packages",
+        //    "proposals": [
+        //        "true",
+        //        "false"
+        //    ],
+        //    "default": "true"
+        //},
+        //"installZSH": {
+        //    "type": "string",
+        //    "description": "Install ZSH",
+        //    "proposals": [
+        //        "true",
+        //        "false"
+        //    ],
+        //    "default": "true"
+        //}
     },
     "platforms": [
         "Any"
