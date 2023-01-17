@@ -1,6 +1,7 @@
 // More info: https://containers.dev/implementors/json_reference/
 {
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
+	//"image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
+	"image": "mcr.microsoft.com/devcontainers/universal:2.1.3-focal",
 	"features": {
     "ghcr.io/devcontainers/features/common-utils:2": {},
     "ghcr.io/lukewiwa/features/shellcheck:0": {},
