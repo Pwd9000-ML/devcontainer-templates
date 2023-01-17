@@ -23,17 +23,22 @@
             ],
             "default": "2.300.2"
         },
-        "terraform": {
+        "Terraform": {
             "type": "boolean",
             "default": true,
             "description": "Install terraform?"
         },
-        "git-lfs": {
+        "gitLfs": {
             "type": "boolean",
             "default": true,
             "description": "Install git-lfs?"
         },
-        "powershell": {
+        "azureCLI": {
+            "type": "boolean",
+            "default": true,
+            "description": "Install Azure CLI?"
+        },
+        "PowerShell": {
             "type": "boolean",
             "default": true,
             "description": "Install PowerShell?"
