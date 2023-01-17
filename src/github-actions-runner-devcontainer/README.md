@@ -39,7 +39,7 @@ There are a few options you can pick from including what version of GitHub Actio
 
 ## What scripts are included
 
-1. **[start.sh](https://github.com/Pwd9000-ML/devcontainer-templates/blob/master/src/github-actions-runner-devcontainer/.devcontainer/scripts/start.sh)**:
+1. **[start.sh](https://github.com/Pwd9000-ML/devcontainer-templates/blob/main/src/github-actions-runner-devcontainer/.devcontainer/scripts/start.sh)**:
 
 ```bash
 #start.sh
@@ -120,7 +120,7 @@ runs-on: [self-hosted, linux, ARM64]
 
 The default labels are fixed and cannot be changed or removed. Consider using custom labels if you need more control over job routing.
 
-As you can see from this [example workflow](https://github.com/Pwd9000-ML/GitHub-Codespaces-Lab/blob/master/.github/workflows/testCodespaceRunner.yml) in my repository, I am routing my **GitHub Action** jobs, specifically to my own **self hosted runner** on my **Codespace** using my **user name** and **repo name** labels with `'runs-on'`:
+As you can see from this [example workflow](https://github.com/Pwd9000-ML/GitHub-Codespaces-Lab/blob/main/.github/workflows/testCodespaceRunner.yml) in my repository, I am routing my **GitHub Action** jobs, specifically to my own **self hosted runner** on my **Codespace** using my **user name** and **repo name** labels with `'runs-on'`:
 
 ```yml
 name: Runner on Codespace test
