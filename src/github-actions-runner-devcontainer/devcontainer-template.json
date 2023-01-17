@@ -1,6 +1,6 @@
 {
     "id": "github-actions-runner",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "name": "GitHub Actions Runner",
     "description": "A devcontainer that spins up and runs a self hosted GitHub Actions runner inside a Codespace attached to the current repository.",
     "documentationURL": "https://github.com/Pwd9000-ML/devcontainer-templates/tree/main/src/github-actions-runner-devcontainer",

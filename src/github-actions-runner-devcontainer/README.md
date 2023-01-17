@@ -32,14 +32,13 @@ A devcontainer that spins up and runs a self hosted GitHub Actions runner inside
 | azureCLI | Install Azure CLI? | boolean | true |
 | PowerShell | Install PowerShell? | boolean | true |
 
-This template definition will install: [common-debian tools](https://github.com/devcontainers/features/tree/main/src/common-utils), [shellcheck](https://github.com/lukewiwa/features), [SSH Server](https://github.com/devcontainers/features/tree/main/src/sshd), [GitHub-CLI](https://github.com/devcontainers/features/tree/main/src/github-cli).
+This template definition will install: [common-debian tools](https://github.com/devcontainers/features/tree/main/src/common-utils), [shellcheck](https://github.com/lukewiwa/features), [GitHub-CLI](https://github.com/devcontainers/features/tree/main/src/github-cli).
 It will also (optionally) install additional tools: [Terraform](https://github.com/devcontainers/features/tree/main/src/terraform), [git-lfs](https://github.com/devcontainers/features/tree/main/src/git-lfs), [Azure CLI](https://github.com/devcontainers/features/tree/main/src/azure-cli), [PowerShell](https://github.com/devcontainers/features/tree/main/src/powershell)
 
 ```json
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {},
 		"ghcr.io/lukewiwa/features/shellcheck:0": {},
-		"ghcr.io/devcontainers/features/sshd:1": {},
 		"ghcr.io/devcontainers/features/github-cli:1": {},
 		"ghcr.io/devcontainers/features/terraform:1": {"Terraform": false },
 		"ghcr.io/devcontainers/features/git-lfs:1": {"gitLfs": false},
