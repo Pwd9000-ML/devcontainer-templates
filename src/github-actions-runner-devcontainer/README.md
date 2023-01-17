@@ -1,4 +1,4 @@
-# GitHub Actions Runner (Community)
+# GitHub Actions Runner Dev Container (Community)
 
 ## Summary
 
@@ -19,34 +19,27 @@
 
 ## Using this definition
 
-This definition will install common-debian tools, `.devcontainer/library-scripts/common-debian.sh` for more details.
-It will also install additional tools based on `.devcontainer/devcontainer.json`:
+This template definition will install: [common-debian tools](https://github.com/devcontainers/features/tree/main/src/common-utils), [shellcheck](https://github.com/lukewiwa/features), [SSH Server](https://github.com/devcontainers/features/tree/main/src/sshd), [GitHub-CLI](https://github.com/devcontainers/features/tree/main/src/github-cli).
+It will also (optionally) install additional tools: [Terraform](https://github.com/devcontainers/features/tree/main/src/terraform), [git-lfs](https://github.com/devcontainers/features/tree/main/src/git-lfs), [Azure CLI](https://github.com/devcontainers/features/tree/main/src/azure-cli), [PowerShell](https://github.com/devcontainers/features/tree/main/src/powershell)
 
 ```json
-"features": {
-   "terraform": "latest",
-   "azure-cli": "latest",
-   "git-lfs": "latest",
-   "github-cli": "latest",
-   "powershell": "latest"
-}
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {},
+		"ghcr.io/lukewiwa/features/shellcheck:0": {},
+		"ghcr.io/devcontainers/features/sshd:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers/features/terraform:1": {"Terraform": false },
+		"ghcr.io/devcontainers/features/git-lfs:1": {"gitLfs": false},
+		"ghcr.io/devcontainers/features/azure-cli:1": {"azureCLI": false},
+		"ghcr.io/devcontainers/features/powershell:1": {"PowerShell": false}
+	}
 ```
 
-There are a few options you can pick from including what version of GitHub Actions runner to use by updating `RUNNER_VERSION` in `.devcontainer/devcontainer.json` (Amend GitHub runner version with 'RUNNER_VERSION'. https://github.com/actions/runner/releases):
-
-```json
-"build": {
-    "args": {
-        "UPGRADE_PACKAGES": "true",
-        "RUNNER_VERSION": "2.295.0"
-    }
-```
+There are a few options you can pick from including what version of GitHub Actions runner to use. (https://github.com/actions/runner/releases).
 
 ## What scripts are included
 
-1. **[common-debian.sh](https://github.com/microsoft/vscode-dev-containers/blob/main/containers/github-actions-runner/.devcontainer/library-scripts/common-debian.sh)**: This script will install additional **debian** based tooling onto the **dev container**.
-
-2. **[start.sh](https://github.com/microsoft/vscode-dev-containers/blob/main/containers/github-actions-runner/.devcontainer/library-scripts/start.sh)**:
+1. **[start.sh](https://github.com/Pwd9000-ML/devcontainer-templates/blob/master/src/github-actions-runner-devcontainer/.devcontainer/scripts/start.sh)**:
 
 ```bash
 #start.sh

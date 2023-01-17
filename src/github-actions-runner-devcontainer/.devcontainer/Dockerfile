@@ -1,17 +1,11 @@
 # You can pick any Debian/Ubuntu-based image. 😊
 FROM mcr.microsoft.com/vscode/devcontainers/base:${templateOption:imageVariant}
 
-# [Optional] Install zsh
-#ARG INSTALL_ZSH=${templateOption:installZSH}
-# [Optional] Upgrade OS packages to their latest versions
-#ARG UPGRADE_PACKAGES=${templateOption:upgradePackages}
-
 # Install needed packages and setup non-root user. Use a separate RUN statement to add your own dependencies.
 ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 COPY scripts/*.sh /tmp/scripts/
-#RUN bash /tmp/scripts/common-debian.sh "${INSTALL_ZSH}" "${USERNAME}" "${USER_UID}" "${USER_GID}" "${UPGRADE_PACKAGES}" "true" "true"
 
 # cd into the user directory, download and unzip the github actions runner
 RUN cd /home/vscode && mkdir actions-runner && cd actions-runner
