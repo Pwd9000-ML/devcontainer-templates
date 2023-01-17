@@ -2,8 +2,6 @@ name: "Release Dev Container Templates & Generate Documentation"
 on:
   workflow_dispatch:
 
-permissions: write-all
-
 jobs:
   deploy:
     if: ${{ github.ref == 'refs/heads/master' }}
@@ -16,10 +14,7 @@ jobs:
         with:
           publish-templates: "true"
           base-path-to-templates: "./src"
-          generate-docs: "false"
-          disable-schema-validation: "false"
-          validate-only: "false"
-          publish-features: "false"
+          generate-docs: "true"
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
