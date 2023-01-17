@@ -15,6 +15,6 @@
 			]
 		}
 	},
-	//"postCreateCommand": "/bin/bash -ex ./.devcontainer/setup.sh > postCreateCommand.log"
-    "postAttachCommand": "npm install -g @devcontainers/cli"
+	"postCreateCommand": "/bin/bash -ex ./.devcontainer/setup.sh > postCreateCommand.log"
+    //"postAttachCommand": "npm install -g @devcontainers/cli"
 }
