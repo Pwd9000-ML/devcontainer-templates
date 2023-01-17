@@ -18,5 +18,4 @@
 	},
 	//"postCreateCommand": "/bin/bash -ex ./.devcontainer/setup.sh > postCreateCommand.log"
     "postCreateCommand": "npm install -g @devcontainers/cli",
-	"remoteUser": "node"
 }
