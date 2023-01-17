@@ -28,24 +28,6 @@
             "default": true,
             "description": "Installs terraform"
         }
-        //"upgradePackages": {
-        //   "type": "string",
-        //  "description": "Upgrade all packages",
-        //    "proposals": [
-        //        "true",
-        //        "false"
-        //    ],
-        //    "default": "true"
-        //},
-        //"installZSH": {
-        //    "type": "string",
-        //    "description": "Install ZSH",
-        //    "proposals": [
-        //        "true",
-        //        "false"
-        //    ],
-        //    "default": "true"
-        //}
     },
     "platforms": [
         "Any"
