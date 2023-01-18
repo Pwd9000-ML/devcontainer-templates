@@ -2,7 +2,11 @@
 
 ## Summary
 
-*Use your codespace compute to also run a self hosted actions runner. Includes common-debian tools, Terraform, Azure CLI, git-lfs, github-cli, powershell and related extensions and dependencies.*
+*Use your codespace compute to also run a self hosted actions runner. This devcontainer can be used as a codespace that will create and attach a `self-hosted github runner` inside of the codespace and attach/register the runner with a specified repository by using `secrets for codespaces` as parameter values:*
+
+![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/sec02.png)  
+
+*Includes optional tools, Terraform, Azure CLI, git-lfs, powershell and related extensions and dependencies.*
 
 | Metadata | Value |  
 |----------|-------|
@@ -19,7 +23,7 @@
 
 ## Using this definition
 
-A devcontainer that spins up and runs a self hosted GitHub Actions runner inside a Codespace attached to the current repository.
+A devcontainer that spins up and runs a **self hosted GitHub Actions runner** inside the compute of a Codespace.
 
 ## Options
 
@@ -36,15 +40,15 @@ This template definition will install: [common-debian tools](https://github.com/
 It will also (optionally) install additional tools: [Terraform](https://github.com/devcontainers/features/tree/main/src/terraform), [git-lfs](https://github.com/devcontainers/features/tree/main/src/git-lfs), [Azure CLI](https://github.com/devcontainers/features/tree/main/src/azure-cli), [PowerShell](https://github.com/devcontainers/features/tree/main/src/powershell)
 
 ```json
-	"features": {
-		"ghcr.io/devcontainers/features/common-utils:2": {},
-		"ghcr.io/lukewiwa/features/shellcheck:0": {},
-		"ghcr.io/devcontainers/features/github-cli:1": {},
-		"ghcr.io/devcontainers/features/terraform:1": {"Terraform": false },
-		"ghcr.io/devcontainers/features/git-lfs:1": {"gitLfs": false},
-		"ghcr.io/devcontainers/features/azure-cli:1": {"azureCLI": false},
-		"ghcr.io/devcontainers/features/powershell:1": {"PowerShell": false}
-	}
+"features": {
+  "ghcr.io/devcontainers/features/common-utils:2": {},
+  "ghcr.io/lukewiwa/features/shellcheck:0": {},
+  "ghcr.io/devcontainers/features/github-cli:1": {},
+  "ghcr.io/devcontainers/features/terraform:1": {"Terraform": false },
+  "ghcr.io/devcontainers/features/git-lfs:1": {"gitLfs": false},
+  "ghcr.io/devcontainers/features/azure-cli:1": {"azureCLI": false},
+  "ghcr.io/devcontainers/features/powershell:1": {"PowerShell": false}
+}
 ```
 
 There are a few options you can pick from including what version of GitHub Actions runner to use. (https://github.com/actions/runner/releases).
@@ -73,7 +77,7 @@ REG_TOKEN=$(curl -sX POST -H "Accept: application/vnd.github.v3+json" -H "Author
 /home/vscode/actions-runner/run.sh
 ```
 
-The second script will start up with the **Codespace/Dev container** and bootstraps the **GitHub runner** when the Codespace starts. Notice that we need to provide the script with some parameters:
+The startup script will start up with the **Codespace/Dev container** and bootstraps the **GitHub runner** when the Codespace starts. Notice that we need to provide the script with some parameters:
 
 ```bash
 GH_OWNER=$GH_OWNER
@@ -85,7 +89,7 @@ These parameters (environment variables) are used to configure and **register** 
 
 We need to provide the GitHub account/org name via the `'GH_OWNER'` environment variable, repository name via `'GH_REPOSITORY'` and a PAT token with `'GH_TOKEN'`.
 
-You can store sensitive information, such as tokens, that you want to access in your codespaces via environment variables. Let's configure these parameters as encrypted [secrets for codespaces](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces).
+You can store these parameters as encrypted [secrets for codespaces](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces).
 
 1. Navigate to the repository `'Settings'` page and select `'Secrets -> Codespaces'`, click on `'New repository secret'`. ![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/sec01.png)
 
@@ -98,39 +102,9 @@ USER_NAME_LABEL=$(git config --get user.name)
 REPO_NAME_LABEL="$GH_REPOSITORY"
 ```
 
-## Note on Personal Access Token (PAT)
-
-See [creating a personal access token](https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) on how to create a GitHub PAT token. PAT tokens are only displayed once and are sensitive, so ensure they are kept safe.
-
-The minimum permission scopes required on the PAT token to register a self hosted runner are: `"repo"`, `"read:org"`:
-
-![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/PAT.png)
-
-**Tip:** I recommend only using short lived PAT tokens and generating new tokens whenever new agent runner registrations are required.  
-
-**IMPORTANT:** Do note that making use of **runner labels** is very important when **triggring/running actions** against runners or runner groups provisioned on a **Codespace**. Hence each runner is labeled with the **user name** and **repo name**.
-
 ![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/label01.png)
 
-## Example
-
-A self-hosted runner automatically receives certain labels when it is added to GitHub Actions. These are used to indicate its operating system and hardware platform:
-
-- `self-hosted`: Default label applied to all self-hosted runners.
-- `linux`, `windows`, or `macOS`: Applied depending on operating system.
-- `x64`, `ARM`, or `ARM64`: Applied depending on hardware architecture.
-
-You can use your workflow's YAML to send jobs to a combination of these labels. In this example, a self-hosted runner that matches all three labels will be eligible to run the job:
-
-```yml
-runs-on: [self-hosted, linux, ARM64]
-```
-
-- `self-hosted` - Run this job on a self-hosted runner.
-- `linux` - Only use a Linux-based runner.
-- `ARM64` - Only use a runner based on ARM64 hardware.
-
-The default labels are fixed and cannot be changed or removed. Consider using custom labels if you need more control over job routing.
+## Example usage of labels
 
 As you can see from this [example workflow](https://github.com/Pwd9000-ML/GitHub-Codespaces-Lab/blob/main/.github/workflows/testCodespaceRunner.yml) in my repository, I am routing my **GitHub Action** jobs, specifically to my own **self hosted runner** on my **Codespace** using my **user name** and **repo name** labels with `'runs-on'`:
 
