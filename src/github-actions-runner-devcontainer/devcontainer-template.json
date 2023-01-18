@@ -1,5 +1,5 @@
 {
-    "id": "github-actions-runner",
+    "id": "github-actions-runner-devcontainer",
     "version": "0.1.1",
     "name": "GitHub Actions Runner",
     "description": "A devcontainer that spins up and runs a self hosted GitHub Actions runner inside a Codespace attached to the current repository.",
