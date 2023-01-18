@@ -20,7 +20,7 @@ Templates are kept under the path `./src`.
 
 💻 Ready to go with GitHub Codespaces \
 🚀 Quickly get up-and-running with a devcontainer \
-🐳 No need to mess with `Dockerfile`s
+🐳 No need to mess with `Dockerfile`
 
 ## Usage
 
@@ -28,11 +28,10 @@ Templates are kept under the path `./src`.
 ![Devcontainers](https://img.shields.io/static/v1?style=for-the-badge&message=Devcontainers&color=2496ED&logo=Docker&logoColor=FFFFFF&label=)
 
 After creating a GitHub Codespace (or a devcontainer in VS Code), open the
-Command Palette to find the <kbd>Dev Containers: Add Dev Container Configuration
-Files...</kbd> command. After you run it, VS Code will guide you through the
+Command Palette to find the `Dev Containers: Add Dev Container Configuration
+Files...` command. After you run it, VS Code will guide you through the
 creation of a `.devcontainer/devcontainer.json` file!
 
-Make sure you click the <kbd>Show All Definitions...</kbd> option to see our
-unofficial templates!
+Make sure you click the <kbd>Show All Definitions...</kbd> option to see all templates.  
 
-Check out more devcointainer templates here: [Devcontainer templates](https://containers.dev/templates)
+Additionally check out more devcointainer templates here: [Devcontainer templates](https://containers.dev/templates)
