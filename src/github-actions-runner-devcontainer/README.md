@@ -95,7 +95,7 @@ You can store these parameters as encrypted [secrets for codespaces](https://doc
 
 2. Create each **Codespace secret** with the values for your environment. ![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/sec02.png)  
 
-The minimum permission scopes required on the PAT token to register a self hosted runner are: `"repo"`, `"read:org"`:
+The minimum permission scopes required on the PAT/GH_TOKEN to register a self hosted runner are: `"repo"`, `"read:org"`:
 
 ![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/PAT.png)  
 
