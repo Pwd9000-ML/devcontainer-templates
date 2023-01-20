@@ -48,11 +48,7 @@ This template definition will install additional features by default: [common-de
 
 Additional non-included [Codespace features](https://containers.dev/features) can also be installed; e.g. Terraform, Azure-CLI, PowerShell, etc..   
 
-## What scripts are included
-
-- **[start.sh](https://github.com/Pwd9000-ML/devcontainer-templates/blob/main/src/github-actions-runner-devcontainer/.devcontainer/scripts/start.sh)**  
-
-This startup script will bootstrap the **GitHub runner** when the Codespace starts. Parameters are taken from **GitHub Secrets (Codespaces)**:
+The **[start.sh](https://github.com/Pwd9000-ML/devcontainer-templates/blob/main/src/github-actions-runner-devcontainer/.devcontainer/scripts/start.sh)** startup script will bootstrap the baked in **GitHub runner** insie the Codespace when the Codespace starts up. Parameters are taken from **GitHub Secrets (Codespaces)**:
 
 ```bash
 GH_OWNER=$GH_OWNER
