@@ -36,7 +36,7 @@ A devcontainer that spins up and runs a **self hosted GitHub Actions runner** in
 | imageVariant | Debian version (use bullseye on local arm64/Apple Silicon): | string | bullseye |
 | runnerVersion | Choose version of GitHub Runner to Install | string | 2.300.2 |
 
-This template definition will install: [common-debian tools](https://github.com/devcontainers/features/tree/main/src/common-utils), [shellcheck](https://github.com/lukewiwa/features), [GitHub-CLI](https://github.com/devcontainers/features/tree/main/src/github-cli).
+This template definition will install additional features by default: [common-debian tools](https://github.com/devcontainers/features/tree/main/src/common-utils), [shellcheck](https://github.com/lukewiwa/features), [GitHub-CLI](https://github.com/devcontainers/features/tree/main/src/github-cli).
 
 ```json
 "features": {
@@ -45,6 +45,8 @@ This template definition will install: [common-debian tools](https://github.com/
   "ghcr.io/devcontainers/features/github-cli:1": {},
 }
 ```
+
+Additional non-included [Codespace features](https://containers.dev/features) can also be installed; e.g. Terraform, Azure-CLI, PowerShell, etc..   
 
 ## What scripts are included
 
@@ -70,7 +72,7 @@ REG_TOKEN=$(curl -sX POST -H "Accept: application/vnd.github.v3+json" -H "Author
 /home/vscode/actions-runner/run.sh
 ```
 
-This startup script will bootstrap the **GitHub runner** when the Codespace starts. Parameters are taken from **GitHub Secrets**:
+This startup script will bootstrap the **GitHub runner** when the Codespace starts. Parameters are taken from **GitHub Secrets (Codespaces)**:
 
 ```bash
 GH_OWNER=$GH_OWNER
