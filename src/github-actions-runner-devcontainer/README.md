@@ -1,15 +1,5 @@
 # GitHub Actions Runner Dev Container (Community)
 
-## Summary
-
-*Use and utelise your codespace compute power to also run a self hosted github actions runner. This devcontainer can be used as a codespace that will create and attach a `self-hosted github runner` inside of the codespace and attach/register the runner with a specified repository by using `secrets for codespaces` as parameter values:*  
-
-![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/sec02.png)  
-
-*The runner registers itself to repository based on above shown **secrets** and labelled with `repository name` and `git user.name (without spaces)`.*  
-
-![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/label01.png)  
-
 | Metadata | Value |  
 |----------|-------|
 | *Contributors* | [Marcel Lupo](https://github.com/Pwd9000-ML) |
@@ -20,6 +10,18 @@
 | *Container host OS support* | Linux |
 | *Container OS* | Debian |
 | *Languages, platforms* | Azure, HCL, PowerShell |
+
+## Summary
+
+*Use and utelise your codespace compute power to also run a self hosted github actions runner. This devcontainer can be used as a codespace that will create and attach a `self-hosted github runner` inside of the codespace and attach/register the runner with a specified repository by using `secrets for codespaces` as parameter values:*  
+
+![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/sec02.png)  
+
+*The runner registers itself to repository based on above shown **secrets** and labelled with `repository name` and `git user.name (without spaces)`.*  
+
+![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/label01.png)  
+
+## Diagram  
 
 ![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/diag01.png)  
 
