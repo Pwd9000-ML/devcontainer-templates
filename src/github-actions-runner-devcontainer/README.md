@@ -56,19 +56,15 @@ GH_REPOSITORY=$GH_REPOSITORY
 GH_TOKEN=$GH_TOKEN
 ```
 
-These parameters (environment variables) are used to configure and **register** the self hosted github runner against the correct repository.
-
-Provide the GitHub account/org name via the `'GH_OWNER'` environment variable, repository name via `'GH_REPOSITORY'` and a PAT token with `'GH_TOKEN'`.
+These parameters (environment variables) are used to configure and **register** the self hosted github runner against the correct repository. Provide the GitHub account/org name via the `'GH_OWNER'` environment variable, repository name via `'GH_REPOSITORY'` and a PAT token with `'GH_TOKEN'`.
 
 You can store these parameters as encrypted [secrets for codespaces](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces).
 
-1. Navigate to the repository `'Settings'` page and select `'Secrets -> Codespaces'`, click on `'New repository secret'`. ![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/sec01.png)
+1. Navigate to the repository `'Settings'` page and select `'Secrets -> Codespaces'`, click on `'New repository secret'`.  ![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/sec01.png)
 
-2. Create each **Codespace secret** with the values for your environment. ![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/sec02.png)  
+2. Create each **Codespace secret** with the values for your environment.  ![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/sec02.png)  
 
-The minimum permission scopes required on the PAT/GH_TOKEN to register a self hosted runner are: `"repo"`, `"read:org"`:
-
-![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/PAT.png)  
+The minimum permission scopes required on the PAT/GH_TOKEN to register a self hosted runner are: `"repo"`, `"read:org"`:  ![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/PAT.png)  
 
 **NOTE:** When the **self hosted runner** is started up and registered, it will also be labeled with the **'user name'** and **'repository name'**, from the following lines. (These labels can be amended if necessary):
 
