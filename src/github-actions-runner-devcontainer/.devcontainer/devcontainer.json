@@ -34,10 +34,6 @@
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {},
 		"ghcr.io/lukewiwa/features/shellcheck:0": {},
-		"ghcr.io/devcontainers/features/github-cli:1": {},
-		"ghcr.io/devcontainers/features/terraform:1": {"Terraform": false },
-		"ghcr.io/devcontainers/features/git-lfs:1": {"gitLfs": false},
-		"ghcr.io/devcontainers/features/azure-cli:1": {"azureCLI": false},
-		"ghcr.io/devcontainers/features/powershell:1": {"PowerShell": false}
+		"ghcr.io/devcontainers/features/github-cli:1": {}
 	}
 }

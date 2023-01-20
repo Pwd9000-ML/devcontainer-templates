@@ -6,7 +6,9 @@
 
 ![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/sec02.png)  
 
-*Includes optional tools, Terraform, Azure CLI, git-lfs, powershell and related extensions and dependencies.*
+Runner registers to repository based on abve secrets and is labelled with the `repository name` and `git user.name (without spaces)`.  
+
+![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/label01.png)
 
 | Metadata | Value |  
 |----------|-------|
@@ -15,7 +17,7 @@
 | *Definition type* | Dockerfile |
 | *Supported architecture(s)* | x86-64, arm64/aarch64 for `bullseye` based images |
 | *Works in Codespaces* | Yes |
-| *Container host OS support* | Linux, macOS, Windows |
+| *Container host OS support* | Linux |
 | *Container OS* | Debian |
 | *Languages, platforms* | Azure, HCL, PowerShell |
 
@@ -31,27 +33,16 @@ A devcontainer that spins up and runs a **self hosted GitHub Actions runner** in
 |-----|-----|-----|-----|
 | imageVariant | Debian version (use bullseye on local arm64/Apple Silicon): | string | bullseye |
 | runnerVersion | Choose version of GitHub Runner to Install | string | 2.300.2 |
-| Terraform | Install terraform? | boolean | true |
-| gitLfs | Install git-lfs? | boolean | true |
-| azureCLI | Install Azure CLI? | boolean | true |
-| PowerShell | Install PowerShell? | boolean | true |
 
 This template definition will install: [common-debian tools](https://github.com/devcontainers/features/tree/main/src/common-utils), [shellcheck](https://github.com/lukewiwa/features), [GitHub-CLI](https://github.com/devcontainers/features/tree/main/src/github-cli).
-It will also (optionally) install additional tools: [Terraform](https://github.com/devcontainers/features/tree/main/src/terraform), [git-lfs](https://github.com/devcontainers/features/tree/main/src/git-lfs), [Azure CLI](https://github.com/devcontainers/features/tree/main/src/azure-cli), [PowerShell](https://github.com/devcontainers/features/tree/main/src/powershell)
 
 ```json
 "features": {
   "ghcr.io/devcontainers/features/common-utils:2": {},
   "ghcr.io/lukewiwa/features/shellcheck:0": {},
   "ghcr.io/devcontainers/features/github-cli:1": {},
-  "ghcr.io/devcontainers/features/terraform:1": {"Terraform": false },
-  "ghcr.io/devcontainers/features/git-lfs:1": {"gitLfs": false},
-  "ghcr.io/devcontainers/features/azure-cli:1": {"azureCLI": false},
-  "ghcr.io/devcontainers/features/powershell:1": {"PowerShell": false}
 }
 ```
-
-There are a few options you can pick from including what version of GitHub Actions runner to use. (https://github.com/actions/runner/releases).
 
 ## What scripts are included
 
@@ -68,7 +59,7 @@ GH_TOKEN=$GH_TOKEN
 HOSTNAME=$(hostname)
 RUNNER_SUFFIX="runner"
 RUNNER_NAME="${HOSTNAME}-${RUNNER_SUFFIX}"
-USER_NAME_LABEL=$(git config --get user.name)
+USER_NAME_LABEL=$( (git config --get user.name) | sed -e 's/ //g')
 REPO_NAME_LABEL="$GH_REPOSITORY"
 
 REG_TOKEN=$(curl -sX POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: token ${GH_TOKEN}" https://api.github.com/repos/${GH_OWNER}/${GH_REPOSITORY}/actions/runners/registration-token | jq .token --raw-output)
@@ -77,7 +68,7 @@ REG_TOKEN=$(curl -sX POST -H "Accept: application/vnd.github.v3+json" -H "Author
 /home/vscode/actions-runner/run.sh
 ```
 
-The startup script will start up with the **Codespace/Dev container** and bootstraps the **GitHub runner** when the Codespace starts. Notice that we need to provide the script with some parameters:
+This startup script will bootstrap the **GitHub runner** when the Codespace starts. Parameters are taken from **GitHub Secrets**:
 
 ```bash
 GH_OWNER=$GH_OWNER
@@ -87,7 +78,7 @@ GH_TOKEN=$GH_TOKEN
 
 These parameters (environment variables) are used to configure and **register** the self hosted github runner against the correct repository.
 
-We need to provide the GitHub account/org name via the `'GH_OWNER'` environment variable, repository name via `'GH_REPOSITORY'` and a PAT token with `'GH_TOKEN'`.
+Provide the GitHub account/org name via the `'GH_OWNER'` environment variable, repository name via `'GH_REPOSITORY'` and a PAT token with `'GH_TOKEN'`.
 
 You can store these parameters as encrypted [secrets for codespaces](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces).
 
@@ -102,32 +93,11 @@ The minimum permission scopes required on the PAT/GH_TOKEN to register a self ho
 **NOTE:** When the **self hosted runner** is started up and registered, it will also be labeled with the **'user name'** and **'repository name'**, from the following lines. (These labels can be amended if necessary):
 
 ```bash
-USER_NAME_LABEL=$(git config --get user.name)
+USER_NAME_LABEL=$( (git config --get user.name) | sed -e 's/ //g')
 REPO_NAME_LABEL="$GH_REPOSITORY"
 ```
 
 ![image.png](https://raw.githubusercontent.com/Pwd9000-ML/blog-devto/main/posts/2022/GitHub-Codespaces-runner/assets/label01.png)
-
-## Example usage of labels
-
-As you can see from this [example workflow](https://github.com/Pwd9000-ML/GitHub-Codespaces-Lab/blob/main/.github/workflows/testCodespaceRunner.yml) in my repository, I am routing my **GitHub Action** jobs, specifically to my own **self hosted runner** on my **Codespace** using my **user name** and **repo name** labels with `'runs-on'`:
-
-```yml
-name: Runner on Codespace test
-
-on:
-  workflow_dispatch:
-
-jobs:
-  testRunner:
-    runs-on: [self-hosted, Pwd9000, GitHub-Codespaces-Lab]
-    steps:
-      - uses: actions/checkout@v3.0.2
-      - name: Display Terraform Version
-        run: terraform --version
-      - name: Display Azure-CLI Version
-        run: az --version
-```
 
 ### Adding the definition to a project or codespace
 
