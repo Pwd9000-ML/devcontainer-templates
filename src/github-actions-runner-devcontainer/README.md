@@ -33,7 +33,7 @@ A devcontainer that spins up and runs a **self hosted GitHub Actions runner** in
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| imageVariant | Debian version (use bullseye on local arm64/Apple Silicon): | string | bullseye |
+| imageVariant | Debian version (use bullseye on local arm64/Apple Silicon) | string | bullseye |
 | runnerVersion | Choose version of GitHub Runner to Install | string | 2.300.2 |
 
 This template definition will install additional features by default: [common-debian tools](https://github.com/devcontainers/features/tree/main/src/common-utils), [shellcheck](https://github.com/lukewiwa/features), [GitHub-CLI](https://github.com/devcontainers/features/tree/main/src/github-cli).
@@ -50,27 +50,7 @@ Additional non-included [Codespace features](https://containers.dev/features) ca
 
 ## What scripts are included
 
-1. **[start.sh](https://github.com/Pwd9000-ML/devcontainer-templates/blob/main/src/github-actions-runner-devcontainer/.devcontainer/scripts/start.sh)**:
-
-```bash
-#start.sh
-#!/bin/bash
-
-GH_OWNER=$GH_OWNER
-GH_REPOSITORY=$GH_REPOSITORY
-GH_TOKEN=$GH_TOKEN
-
-HOSTNAME=$(hostname)
-RUNNER_SUFFIX="runner"
-RUNNER_NAME="${HOSTNAME}-${RUNNER_SUFFIX}"
-USER_NAME_LABEL=$( (git config --get user.name) | sed -e 's/ //g')
-REPO_NAME_LABEL="$GH_REPOSITORY"
-
-REG_TOKEN=$(curl -sX POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: token ${GH_TOKEN}" https://api.github.com/repos/${GH_OWNER}/${GH_REPOSITORY}/actions/runners/registration-token | jq .token --raw-output)
-
-/home/vscode/actions-runner/config.sh --unattended --url https://github.com/${GH_OWNER}/${GH_REPOSITORY} --token ${REG_TOKEN} --name ${RUNNER_NAME}  --labels ${USER_NAME_LABEL},${REPO_NAME_LABEL}
-/home/vscode/actions-runner/run.sh
-```
+- **[start.sh](https://github.com/Pwd9000-ML/devcontainer-templates/blob/main/src/github-actions-runner-devcontainer/.devcontainer/scripts/start.sh)**  
 
 This startup script will bootstrap the **GitHub runner** when the Codespace starts. Parameters are taken from **GitHub Secrets (Codespaces)**:
 
