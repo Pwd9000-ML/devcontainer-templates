@@ -13,7 +13,7 @@
 
 ## Video tutorial
 
-[![image.png](http://img.youtube.com/vi/4CPoHrLgO1E/0:34.jpg)](https://youtu.be/4CPoHrLgO1E "Run self-hosted GitHub runners on GitHub Codespaces")
+[![image.png](http://img.youtube.com/vi/4CPoHrLgO1E/034.jpg)](https://youtu.be/4CPoHrLgO1E "Run self-hosted GitHub runners on GitHub Codespaces")
 
 ## Summary
 
