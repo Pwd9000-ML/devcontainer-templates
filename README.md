@@ -4,7 +4,7 @@ A set of devcontainer templates following the nascent [devcontainer template spe
 
 Templates are kept under the path `./src`.  
 
-## My templates
+## My list of community Devcontainer templates
 
 ### 1. GitHub Actions Self-Hosted Runner Devcontainer
 
