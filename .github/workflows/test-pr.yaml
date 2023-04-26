@@ -15,6 +15,7 @@ jobs:
         with:
           filters: |
             github-actions-runner-devcontainer: ./**/github-actions-runner-devcontainer/**
+            azure-pipelines-agent-devcontainer: ./**/azure-pipelines-agent-devcontainer/**
 
   test:
     needs: [detect-changes]
