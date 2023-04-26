@@ -5,7 +5,7 @@
 | *Contributors* | [Marcel Lupo](https://github.com/Pwd9000-ML) |
 | *Categories* | Community, GitHub, Other |
 | *Definition type* | Dockerfile |
-| *Supported architecture(s)* | x86-64, arm64/aarch64 for `bullseye` based images |
+| *Supported architecture(s)* | x86-64, arm64/arch64 for `bullseye` based images |
 | *Works in Codespaces* | Yes |
 | *Container host OS support* | Linux |
 | *Container OS* | Debian |
@@ -38,7 +38,7 @@ A devcontainer that spins up and runs a **self hosted GitHub Actions runner** in
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | imageVariant | Debian version (use bullseye on local arm64/Apple Silicon) | string | bullseye |
-| runnerVersion | Choose version of GitHub Runner to Install | string | 2.300.2 |
+| runnerVersion | Choose version of GitHub Runner to Install | string | 2.303.0 |
 
 This template definition will install additional features by default: [common-debian tools](https://github.com/devcontainers/features/tree/main/src/common-utils), [shellcheck](https://github.com/lukewiwa/features), [GitHub-CLI](https://github.com/devcontainers/features/tree/main/src/github-cli).
 
@@ -50,7 +50,7 @@ This template definition will install additional features by default: [common-de
 }
 ```
 
-Additional non-included [Codespace features](https://containers.dev/features) can also be installed; e.g. Terraform, Azure-CLI, PowerShell, etc..   
+Additional non-included [Codespace features](https://containers.dev/features) can also be installed; e.g. Terraform, Azure-CLI, PowerShell, etc..  
 
 The **[start.sh](https://github.com/Pwd9000-ML/devcontainer-templates/blob/main/src/github-actions-runner-devcontainer/.devcontainer/scripts/start.sh)** startup script will bootstrap the baked in **GitHub runner** inside of the Codespace when the Codespace starts up. Parameters are taken from **GitHub Secrets (Codespaces)**:
 
@@ -85,7 +85,7 @@ REPO_NAME_LABEL="$GH_REPOSITORY"
 
 2. Start VS Code and open your project folder or connect to a codespace.
 
-3. Press <kbd>F1</kbd> select and **Add Development Container Configuration Files...** command for **Remote-Containers** or **Codespaces**. 
+3. Press <kbd>F1</kbd> select and **Add Development Container Configuration Files...** command for **Remote-Containers** or **Codespaces**.  
 
    > **Note:** If needed, you can drag-and-drop the `.devcontainer` folder from this sub-folder in a locally cloned copy of this repository into the VS Code file explorer instead of using the command.
 

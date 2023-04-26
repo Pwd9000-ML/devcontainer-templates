@@ -1,0 +1,30 @@
+{
+    "id": "azure-pipelines-agent-devcontainer",
+    "version": "1.0.0",
+    "name": "Azure Pipelines Agent",
+    "description": "A devcontainer that spins up and runs a self hosted Azure DevOps Pipelines Agent inside a Codespace attached to a DevOps agent pool.",
+    "documentationURL": "https://github.com/Pwd9000-ML/devcontainer-templates/tree/main/src/azure-pipelines-agent-devcontainer",
+    "licenseURL": "https://github.com/Pwd9000-ML/devcontainer-templates/blob/main/LICENSE",
+    "options": {
+        "imageVariant": {
+            "type": "string",
+            "description": "Debian version (use bullseye on local arm64/Apple Silicon):",
+            "proposals": [
+                "bullseye",
+                "buster"
+            ],
+            "default": "bullseye"
+        },
+        "agentVersion": {
+            "type": "string",
+            "description": "Choose version of ADO Agent to Install",
+            "proposals": [
+                "2.213.2", "2.214.2", "2.218.1", "2.220.0", "3.220.0"
+            ],
+            "default": "2.218.1"
+        }
+    },
+    "platforms": [
+        "Any"
+    ]
+}
