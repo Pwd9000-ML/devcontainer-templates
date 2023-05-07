@@ -8,11 +8,13 @@ Templates are kept under the path `./src`.
 
 ### 1. GitHub Actions Self-Hosted Runner Devcontainer
 
-See this video tutorial on usage example:  
+See this video tutorial on usage example to run GitHub Actions Self-Hosted Runners inside of a Codespace :  
 
 [![image.png](http://img.youtube.com/vi/4CPoHrLgO1E/0.jpg)](https://youtu.be/4CPoHrLgO1E "Run self-hosted GitHub runners on GitHub Codespaces")
 
 ### 2. Azure Devops Pipeline Self-Hosted Agent Devcontainer
+
+See this video tutorial on usage example to run Azure Pipelines Self-Hosted Agents inside of a Codespace :  
 
 [![image.png](http://img.youtube.com/vi/XTc7bphBox8/0.jpg)](https://youtu.be/XTc7bphBox8 "Run self-hosted Azure Pipelines on GitHub Codespaces")
 
