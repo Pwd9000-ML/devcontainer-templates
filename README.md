@@ -12,7 +12,7 @@ See this video tutorial on usage example:
 
 [![image.png](http://img.youtube.com/vi/4CPoHrLgO1E/0.jpg)](https://youtu.be/4CPoHrLgO1E "Run self-hosted GitHub runners on GitHub Codespaces")
 
-### 2. Azure Devops Pipeline Self-Hosted Agent Devcontainer (In progress...)
+### 2. Azure Devops Pipeline Self-Hosted Agent Devcontainer
 
 [![image.png](http://img.youtube.com/vi/XTc7bphBox8/0.jpg)](https://youtu.be/XTc7bphBox8 "Run self-hosted Azure Pipelines on GitHub Codespaces")
 
