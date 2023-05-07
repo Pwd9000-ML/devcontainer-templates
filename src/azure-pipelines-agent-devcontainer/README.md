@@ -15,6 +15,8 @@
 
 [![image.png](http://img.youtube.com/vi/XTc7bphBox8/0.jpg)](https://youtu.be/XTc7bphBox8 "Run self-hosted Azure Pipelines on GitHub Codespaces")
 
+Also see this [Blog Post](https://dev.to/pwd9000/run-self-hosted-azure-pipelines-agent-on-github-codespaces-video-tutorial-1eb4) for additional config options.
+
 ## Summary
 
 This contribution is made was made as part of the [GitHub + DEV 2023 Hackathon](https://dev.to/devteam/announcing-the-github-dev-2023-hackathon-4ocn)
