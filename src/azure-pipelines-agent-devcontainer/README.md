@@ -13,7 +13,7 @@
 
 ## Video tutorial
 
-Coming soon...
+[![image.png](http://img.youtube.com/vi/XTc7bphBox8/0.jpg)](https://youtu.be/XTc7bphBox8 "Run self-hosted Azure Pipelines on GitHub Codespaces")
 
 ## Summary
 
