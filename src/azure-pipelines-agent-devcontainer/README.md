@@ -1,4 +1,4 @@
-# GitHub Actions Runner Dev Container (Community)
+# Azure Pipelines Agent Dev Container (Community)
 
 | Metadata | Value |  
 |----------|-------|
