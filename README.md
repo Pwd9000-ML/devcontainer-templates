@@ -14,7 +14,7 @@ See this video tutorial on usage example:
 
 ### 2. Azure Devops Pipeline Self-Hosted Agent Devcontainer (In progress...)
 
-Coming soon...
+[![image.png](http://img.youtube.com/vi/XTc7bphBox8/0.jpg)](https://youtu.be/XTc7bphBox8 "Run self-hosted Azure Pipelines on GitHub Codespaces")
 
 ## devcontainer community templates
 
