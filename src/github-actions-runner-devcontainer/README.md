@@ -15,6 +15,8 @@
 
 [![image.png](http://img.youtube.com/vi/4CPoHrLgO1E/0.jpg)](https://youtu.be/4CPoHrLgO1E "Run self-hosted GitHub runners on GitHub Codespaces")
 
+Also see this [Blog Post](https://dev.to/pwd9000/run-self-hosted-github-runners-on-github-codespaces-video-tutorial-1ggh) for additional config options.
+
 ## Summary
 
 *Use and utelise your codespace compute power to also run a self hosted github actions runner. This devcontainer can be used as a codespace that will create and attach a `self-hosted github runner` inside of the codespace and attach/register the runner with a specified repository by using `secrets for codespaces` as parameter values:*  
